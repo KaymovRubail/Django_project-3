@@ -1,0 +1,21 @@
+{%extends 'components/navbar.html'%}
+{%block content%}
+<body>
+    <h1>hi</h1>
+    <div class="card" style="width: 18rem;">
+  <img src={{p.image}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{p.title}}</h5>
+    <p class="card-text">{{p.content}}</p>
+      {%for c in p.category.all%}
+        <a href="#" class="btn btn-secondory">{{c.name}}</a>
+      {%endfor%}
+      <h5>Comments</h5>
+      {%for r in p.reviews.all%}
+        <p>{{r.text}}</p>
+      {%endfor%}
+  </div>
+</div>
+</body>
+</html>
+{%endblock%}
